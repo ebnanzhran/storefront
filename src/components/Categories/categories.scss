@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  border: 0.5px solid #fff;
+  color: #fff;
+  box-shadow: 30px;
+  background-color: #968e8e;
+
+  .tab_content {
+    color: #fff;
+    border: 1px solid #000;
+    box-shadow: 4px 4px 20px 0px #0000003d;
+
+    &hover {
+      box-shadow: 4px 4px 20px 0px #0000003d;
+      border: 1px solid #fff;
+    }
+  }
+}

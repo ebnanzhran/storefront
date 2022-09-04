@@ -1,0 +1,31 @@
+.cart-container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+
+  .section-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(91, 87, 87);
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.product-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 3px;
+  margin-right: 2px;
+  box-shadow: 0 0 0 0.5 rgb(199, 190, 190);
+}
