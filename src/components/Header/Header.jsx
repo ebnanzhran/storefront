@@ -10,7 +10,7 @@ export default function Header(props) {
     <>
       <AppBar style={{ backgroundColor: '#4d4d4d' }} className="header_container" position="static">
         <Toolbar>
-          <h3 data-testid='header'>B.Zhran Store</h3>
+          <h3 data-testid='header'>Bahaa Store</h3>
         </Toolbar>
       </AppBar>
     </>

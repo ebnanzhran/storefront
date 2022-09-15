@@ -5,11 +5,17 @@ import { CardHeader } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import { addToCart } from '../../store/Cart';
+import { removeFromCart } from '../../store/Cart';
 import { connect } from 'react-redux';
 import './products.scss'
 
 function Products(props) {
   const style = { width: '200px', height: '200px' }
+
+  const handleDelete = (item) => {
+    removeFromCart(item);
+  }
+
   return (
     <>
       <div className="cart-container">
@@ -20,9 +26,12 @@ function Products(props) {
           {
             props.cart.cartItems.map(cartItem => {
               return (
-                <p className='items'>
-                  {cartItem.name}: {cartItem.inCart} pc(s)
-                </p>
+                <>
+                  <button onClick={handleDelete(cartItem.id)}>X</button>
+                  <p className='items'>
+                    {cartItem.name}: {cartItem.inCart} pc(s)
+                  </p>
+                </>
               );
             })
 

@@ -22,6 +22,20 @@ export default (state = initialState, action) => {
         state.totalCartItems += 1;
       }
       return state;
+    case 'removeFromCart':
+      let exists1 = true;
+      for (let i = 0; i < state.cartItems.length; i++) {
+        if (state.cartItems[i].id === payload) {
+          exists1 = false;
+          state.cartItems[i].inCart -= 1;
+          state.totalCartItems -= 1;
+        }
+      }
+      if (exists1) {
+        state.filter(item => item.id !== payload);
+        state.totalCartItems -= 1;
+      }
+      return state;
     default:
       return state;
   }
@@ -30,6 +44,12 @@ export default (state = initialState, action) => {
 export const addToCart = product => {
   return {
     type: 'addToCart',
+    payload: product,
+  };
+};
+export const removeFromCart = product => {
+  return {
+    type: 'removeFromCart',
     payload: product,
   };
 };
